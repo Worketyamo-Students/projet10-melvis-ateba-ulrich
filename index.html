@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./tailwind.config.js"></script> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>watch</title>
+</head>
+<body  class="bg-cover"
+style="background-image: url(./img/3.png); w-full h-full">
+    <div class="flex flex-col items-center justify-center text-white p-[4rem] gap-[2rem]">
+        <button class="h-[8rem] w-[20rem] bg-black rounded-[2rem] text-[3rem]">
+            <span id="hrs">0 </span>:
+            <span id="mins">0 </span>:
+            <span id="secs">0 </span>
+        </button>
+        <button class="h-[3rem] w-[7rem] bg-[#4A0404] rounded-[1rem] " id="start_btn" onclick="startWatch()">START</button>
+</div>
+ <script>
+    var hrs = document.getElementById("hrs") 
+    var mins = document.getElementById("mins") 
+    var sec = document.getElementById("secs") 
+
+    setInterval(()=>{
+    var time = new Date()
+    hrs.innerHTML = time.getHours()
+    mins.innerHTML = time.getMinutes()
+    sec.innerHTML = time.getSeconds()
+},1000)
+ </script>   
+</body>
+</html>
